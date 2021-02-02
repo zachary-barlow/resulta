@@ -10,11 +10,6 @@ from datetime import datetime
 
 API_KEY = '74db8efa2a6db279393b433d97c2bc843f8e32b0'
 
-# Create your views here.
-def index(request):
-  return JsonResponse({'message': 'Hello WOrld'})
-
-
 async def scoreboard(request, league, start_date, end_date):
 
   url_score = 'https://delivery.chalk247.com/scoreboard/{}/{}/{}.json?api_key={}'.format(league, start_date, end_date, API_KEY)
@@ -52,8 +47,3 @@ async def scoreboard(request, league, start_date, end_date):
     })
 
   return JsonResponse(frm, safe=False)
-
-
-
-def rankings(request, league):
-  return HttpResponse({'message': 'Hello WOrld'})
